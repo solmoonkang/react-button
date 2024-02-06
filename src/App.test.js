@@ -4,5 +4,5 @@ import App from './App';
 test('the counter starts at 0', () => {
   render(<App />);
   const counteElement = screen.getByTestId("counter");
-  expect(counteElement).toBe(0);
+  expect(counteElement).toHaveTextContent(0);
 });
