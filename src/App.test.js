@@ -35,3 +35,10 @@ test("When the - button is pressed, the counter changes to 1", () => {
   expect(counterElement).toHaveTextContent(1);
 });
 
+test("Prevent the -, + button from being pressed when the on/off button is clicked", () => {
+  render(<App />);
+  const onOffButtonElement = screen.getByTestId("on/off-button");
+  fireEvent.click(onOffButtonElement);
+  const plusButtonElement = screen.getByTestId("plus-button");
+  expect(plusButtonElement).toBeDisabled();
+});
